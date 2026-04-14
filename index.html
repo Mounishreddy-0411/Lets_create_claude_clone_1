@@ -1,0 +1,111 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mounish AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Markdown Renderinhtmlg -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body class="dark-mode">
+    <div class="animated-bg"></div>
+    <div id="particles-js" class="particles-container"></div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-brain"></i> History</h2>
+                <div class="search-history">
+                    <input type="text" id="historySearch" placeholder="Search chats...">
+                </div>
+            </div>
+            <div class="history-list" id="historyList">
+                <!-- History items added here -->
+            </div>
+            <div class="sidebar-footer">
+                <button id="newChatBtn"><i class="fas fa-plus"></i> New Chat</button>
+                <div class="theme-toggle">
+                    <i class="fas fa-sun"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="themeSwitch" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <header class="chat-header">
+                <div class="header-left">
+                    <button id="toggleSidebar" class="icon-btn"><i class="fas fa-bars"></i></button>
+                    <h1>Mounish AI</h1>
+                </div>
+                <div class="header-right">
+                    <span class="badge model-badge">Gemini 2.0 Flash</span>
+                </div>
+            </header>
+
+            <div class="chat-container" id="chatContainer">
+                <!-- Welcome Message -->
+                <div class="message bot-message welcome">
+                    <div class="message-content">
+                        <h1>How can I help you today?</h1>
+                        <p>I can answer any question about news, sports, coding, math, and more. I never say "I don't
+                            know."</p>
+                        <div class="quick-actions">
+                            <button class="qa-btn" data-query="Latest world news"><i class="fas fa-newspaper"></i>
+                                News</button>
+                            <button class="qa-btn" data-query="Live sports scores"><i class="fas fa-football-ball"></i>
+                                Sports</button>
+                            <button class="qa-btn" data-query="Weather in London"><i class="fas fa-cloud-sun"></i>
+                                Weather</button>
+                            <button class="qa-btn" data-query="Bitcoin price current"><i class="fas fa-chart-line"></i>
+                                Stocks</button>
+                            <button class="qa-btn" data-query="Explain quantum computing"><i
+                                    class="fas fa-microchip"></i> Tech</button>
+                            <button class="qa-btn" data-query="Solve: 15% of 1200"><i class="fas fa-calculator"></i>
+                                Math</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator">
+                <span></span><span></span><span></span>
+            </div>
+
+            <footer class="chat-footer">
+                <div class="input-wrapper">
+                    <label for="fileUpload" class="icon-btn" title="Upload Image/File">
+                        <i class="fas fa-paperclip"></i>
+                        <input type="file" id="fileUpload" hidden accept="image/*,.pdf,.txt,.py,.js">
+                    </label>
+                    <textarea id="userInput" placeholder="Ask me anything..." rows="1"></textarea>
+                    <button id="voiceBtn" class="icon-btn" title="Voice Input"><i
+                            class="fas fa-microphone"></i></button>
+                    <button id="ttsToggle" class="icon-btn" title="Text to Speech"><i
+                            class="fas fa-volume-up"></i></button>
+                    <button id="sendBtn" class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <p class="footer-note">Mounish AI Assistant powered by Google Gemini</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ogl/dist/ogl.umd.js"></script>
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
